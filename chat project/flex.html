@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a621aabc7e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Other CSS styles */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(252, 245, 235);
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .box {
+            width: 30%;
+            padding-top: 30%; /* This makes the height equal to the width, creating a square */
+            background-color: #ff000091;
+            color: white;
+            border-radius: 5px;
+           
+            position: relative; /* Needed to position the text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        
+
+        .story {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        }
+        .story3{
+            position: absolute;
+            top: 30%;
+            color: whitesmoke;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .box {
+                width: 100%;
+                padding-top: 100%; /* Ensure the boxes remain square */
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Header and other styles */
+        .icon-container {
+            position: relative;
+            display: inline-block;
+            font-size: 36px;
+            width: 40px;
+            height: 40px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: red;
+            text-decoration: none;
+        }
+
+        .icon-container .fa-message {
+            font-size: inherit;
+            line-height: inherit;
+            vertical-align: middle;
+        }
+
+        .icon-container .icon-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.5em;
+            color: red;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .feature, .privacy, .help {
+            display: inline-block;
+            margin-left: 10vw;
+            color: black;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .feature, .privacy, .help {
+                display: block;
+                margin-left: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .icon-container {
+                font-size: 24px;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+            }
+
+            .icon-container .icon-text {
+                font-size: 0.4em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            height: 60px;
+            padding: 0 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            line-height: 60px;
+            z-index: 10;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 11;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #openSidebarBtn {
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            #openSidebarBtn {
+                display: inline-block;
+            }
+
+            .help, .privacy, .feature {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #openSidebarBtn {
+                display: inline-block;
+            }
+
+            .help, .privacy, .feature {
+                display: none;
+            }
+        }
+        #video{
+            position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="./kal.html" class="icon-container">
+            <i class="fa-regular fa-message"></i>
+            <span class="icon-text">JM</span>
+        </a>
+        <a class="feature" href="./about.html"><h2>About</h2></a>
+        <a class="privacy" href="./privacy.html"><h2>Privacy</h2></a>
+        <a class="help" href="exampleStory.html"><h2>The Stories</h2></a>
+        <span id="openSidebarBtn" onclick="openSidebar()">&#9776; Menu</span>
+    </header>
+<video autoplay muted loop id="video" src="./assets/istockphoto-1133146144-640_adpp_is.mp4"></video>
+    <div class="container">
+        <div class="box" onclick="location.href='#';">
+            <h1 class="story"> <a href="./exampleStory.html">The story of JM</a> </h1>
+        </div>
+        <div class="box" onclick="location.href='#';">
+            <h1 class="story">Adding Soon</h1>
+        </div>
+        <div class="box" onclick="location.href='#';">
+            <h1 class="story3">Specially dedicated to my all 11R classmates, if you have any stories we can build together</h1>
+        </div>
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</a>
+        <a href="./about.html">About</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./exampleStory.html">The Stories</a>
+    </div>
+
+    <script>
+        function openSidebar() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+</body>
+</html>

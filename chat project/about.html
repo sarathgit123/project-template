@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: rgb(252, 245, 235);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      padding: 0 20px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-container {
+      position: relative;
+      display: inline-block;
+      font-size: 36px;
+      width: 100px; /* Adjusted width */
+      height: 40px; /* Adjusted height */
+      background-color: #f0f0f0;
+      border-radius: 20px; /* Adjusted border-radius to fit wider shape */
+      text-align: center;
+      line-height: 40px;
+      color: red;
+      text-decoration: none;
+    }
+
+    .icon-container .fa-message {
+      font-size: 24px; /* Adjust font size of the icon */
+      vertical-align: middle;
+    }
+
+    .icon-container .icon-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.5em;
+      color: red;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 18px;
+      color: black;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #ff6347;
+    }
+
+    #openSidebarBtn {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .about {
+      padding: 20px;
+      margin-top: 80px;
+    }
+
+    .about h3 {
+      font-size: 1.2em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 11;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      #openSidebarBtn {
+        display: inline-block;
+      }
+
+      .about {
+        padding: 20px;
+        margin-top: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .icon-container {
+        font-size: 24px;
+        width: 80px; /* Adjusted width */
+        height: 30px;
+        line-height: 30px;
+      }
+
+      .icon-container .icon-text {
+        font-size: 0.4em;
+      }
+
+      .about h3 {
+        font-size: 1em;
+      }
+    }
+   
+    
+  </style>
+</head>
+<body>
+  <header>
+    <a href="./kal.html" class="icon-container">
+      <i class="fa-regular fa-message"></i>
+      <span class="icon-text">JM</span>
+    </a>
+    <div class="nav-links">
+      <a href="./about.html ">About</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./flex.html">The Stories</a>
+      <a href="./exampleStory.html">JM</a>
+    </div>
+    <span id="openSidebarBtn" onclick="openSidebar()">&#9776; Menu</span>
+  </header>
+
+  <div class="about">
+    
+    
+    <h1>About</h1>
+    <h3>JM is a platform where you can share your <jm>untold</jm> story in the form of messages. Most of us have done this at some point in our lives. We may also keep those silly nicknames when chatting with someone, but not every story ends up being successful. Welcome to read the stories of untold; new stories are added every day. By the way, these are not just stories; these are emotions of many.</h3>
+
+    <h3>In the end, nobody really gives a damn about what you have been through because you are unable to tell your parents, professors, or even friends about it. However, even the smallest gestures and foolish exchanges with them can have a profound emotional impact on us. Everything will eventually fade away, therefore you're going to erase everything. However, before you do so, consider whether you truly wanted to share your tale with the world one last time because you're not alone in this. </h3>
+  </div>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</a>
+    <a href="./about.html">About</a>
+    <a href="./privacy.html">Privacy</a>
+    <a href="./flex.html">The Stories</a>
+    <a href="./exampleStory.html">JM</a>
+  </div>
+
+  <script>
+    function openSidebar() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
+</body>
+</html>
